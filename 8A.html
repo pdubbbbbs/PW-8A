@@ -38,6 +38,20 @@
         .nav-link.active {
             color: #ff69b4 !important;
         }
+        .carousel-item img {
+            height: 600px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +80,62 @@
             </div>
         </div>
     </nav>
+
+    <!-- Image Carousel -->
+    <div id="unitCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/8A/unit_8A_image_1.jpg" class="d-block" alt="Unit 8A Main View">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to Unit 8A</h5>
+                    <p>Luxurious Living Space with Modern Design</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/8A/unit_8A_image_2.jpg" class="d-block" alt="Unit 8A Living Room">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Spacious Living Room</h5>
+                    <p>Featuring Floor-to-Ceiling Windows</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/8A/unit_8A_image_3.jpg" class="d-block" alt="Unit 8A Kitchen">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Gourmet Kitchen</h5>
+                    <p>Premium Appliances and Custom Cabinetry</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/8A/unit_8A_image_4.jpg" class="d-block" alt="Unit 8A Master Bedroom">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Master Suite</h5>
+                    <p>Elegant Master Bedroom with City Views</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/8A/unit_8A_image_5.jpg" class="d-block" alt="Unit 8A Master Bathroom">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Spa-Like Bathroom</h5>
+                    <p>Luxurious Master Bath with Premium Finishes</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#unitCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#unitCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
     <main class="container p-8">
         <header class="text-center my-5">
