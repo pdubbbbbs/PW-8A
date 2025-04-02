@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .dashboard-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+        .status-indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .status-active {
+            background-color: #28a745;
+        }
+        .status-inactive {
+            background-color: #dc3545;
+        }
+        .status-pending {
+            background-color: #ffc107;
+        }
+        .header-section {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .device-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="container">
+            <h1>Security Dashboard</h1>
+            <p>Real-time monitoring and security status</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Summary Row -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="dashboard-card p-4">
+                    <i class="fas fa-video device-icon text-primary"></i>
+                    <h3>Cameras</h3>
+                    <p>8 Active / 0 Inactive</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dashboard-card p-4">
+                    <i class="fas fa-door-closed device-icon text-success"></i>
+                    <h3>Access Points</h3>
+                    <p>12 Secured / 0 Unsecured</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dashboard-card p-4">
+                    <i class="fas fa-bell device-icon text-warning"></i>
+                    <h3>Alerts</h3>
+                    <p>0 Active Alerts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Device Status -->
+        <h2 class="mb-4">Device Status</h2>
+        <div class="dashboard-card p-4">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Last Check</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Camera 1</td>
+                            <td>Unit 8A - Front</td>
+                            <td><span class="status-indicator status-active"></span>Active</td>
+                            <td>1 min ago</td>
+                        </tr>
+                        <tr>
+                            <td>Camera 2</td>
+                            <td>Unit 8A - Back</td>
+                            <td><span class="status-indicator status-active"></span>Active</td>
+                            <td>1 min ago</td>
+                        </tr>
+                        <tr>
+                            <td>Door Lock</td>
+                            <td>Unit 8A - Main</td>
+                            <td><span class="status-indicator status-active"></span>Secured</td>
+                            <td>1 min ago</td>
+                        </tr>
+                        <tr>
+                            <td>Camera 3</td>
+                            <td>Unit 10N - Front</td>
+                            <td><span class="status-indicator status-active"></span>Active</td>
+                            <td>1 min ago</td>
+                        </tr>
+                        <tr>
+                            <td>Camera 4</td>
+                            <td>Unit 10N - Back</td>
+                            <td><span class="status-indicator status-active"></span>Active</td>
+                            <td>1 min ago</td>
+                        </tr>
+                        <tr>
+                            <td>Door Lock</td>
+                            <td>Unit 10N - Main</td>
+                            <td><span class="status-indicator status-active"></span>Secured</td>
+                            <td>1 min ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <h2 class="mb-4 mt-5">Recent Activity</h2>
+        <div class="dashboard-card p-4">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Daily System Check</h5>
+                        <small>3 hours ago</small>
+                    </div>
+                    <p class="mb-1">All systems operating normally</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Maintenance Check</h5>
+                        <small>1 day ago</small>
+                    </div>
+                    <p class="mb-1">Routine maintenance completed on all cameras</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">System Update</h5>
+                        <small>2 days ago</small>
+                    </div>
+                    <p class="mb-1">Security software updated to latest version</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
