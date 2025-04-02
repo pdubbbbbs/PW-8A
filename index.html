@@ -4,58 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W Hollywood Residences</title>
-    <meta name="description" content="Explore luxury living at W Hollywood Residences, featuring premium units with stunning views and world-class amenities.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #fff;
-        }
+        body { background: #1a1a2e; color: #fff; }
         .unit-card {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
-            height: 100%;
         }
-        .unit-card:hover {
-            transform: translateY(-5px);
-        }
-        .glow {
-            box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
-        }
-        .nav-link {
-            color: white !important;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #ff69b4 !important;
-        }
-        .nav-link.active {
-            color: #ff69b4 !important;
-        }
-        .hero-section {
+        .unit-card:hover { transform: translateY(-5px); }
+        .glow { box-shadow: 0 0 15px rgba(255, 192, 203, 0.5); }
+        .nav-link { color: white !important; }
+        .nav-link:hover { color: #ff69b4 !important; }
+        .nav-link.active { color: #ff69b4 !important; }
+        .carousel-item img {
             height: 600px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/building/exterior.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 2rem;
-            color: #ff69b4;
-            margin-bottom: 1rem;
-        }
-        .unit-image {
-            height: 250px;
             object-fit: cover;
             width: 100%;
-            border-top-left-radius: calc(0.375rem - 1px);
-            border-top-right-radius: calc(0.375rem - 1px);
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -63,7 +35,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container">
-            <a class="navbar-brand text-pink" href="index.html" style="color: #ff69b4;">W Hollywood Residences</a>
+            <a class="navbar-brand" href="index.html" style="color: #ff69b4;">W Hollywood Residences</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -86,107 +58,71 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section mb-5">
-        <div class="container">
-            <h1 class="display-3 mb-4">W Hollywood Residences</h1>
-            <p class="lead mb-4" style="color: #ff69b4;">Luxury Living in the Heart of Hollywood</p>
+    <!-- Main Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
         </div>
-    </section>
-
-    <main class="container">
-        <!-- Featured Units -->
-        <section class="mb-5">
-            <h2 class="text-center mb-4">Featured Units</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="unit-card rounded overflow-hidden">
-                        <img src="images/8A/unit_8A_image_1.jpg" alt="Unit 8A" class="unit-image">
-                        <div class="p-4">
-                            <h3 class="h4 mb-3">Unit 8A</h3>
-                            <p>Premium north-facing unit featuring a recent high-quality remodel, stunning views, and sophisticated design.</p>
-                            <ul class="list-unstyled mb-4">
-                                <li>• 2 Bed, 2.5 Bath</li>
-                                <li>• 1,580 sq ft</li>
-                                <li>• Recently Remodeled</li>
-                            </ul>
-                            <a href="8A.html" class="btn btn-outline-light">View Details</a>
-                        </div>
-                    </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/8A/unit_8A_image_1.jpg" class="d-block w-100" alt="Unit 8A Living Room">
+                <div class="carousel-caption">
+                    <h5>Unit 8A - Living Room</h5>
+                    <p>Luxurious living space with stunning views</p>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="unit-card rounded overflow-hidden">
-                        <img src="images/10N/unit_10N_image_1.jpg" alt="Unit 10N" class="unit-image">
-                        <div class="p-4">
-                            <h3 class="h4 mb-3">Unit 10N</h3>
-                            <p>Exclusive north-facing residence offering panoramic views and premium finishes throughout.</p>
-                            <ul class="list-unstyled mb-4">
-                                <li>• 2 Bed, 2 Bath</li>
-                                <li>• 1,480 sq ft</li>
-                                <li>• Designer Finishes</li>
-                            </ul>
-                            <a href="10N.html" class="btn btn-outline-light">View Details</a>
-                        </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/10N/unit_10N_image_1.jpg" class="d-block w-100" alt="Unit 10N Living Room">
+                <div class="carousel-caption">
+                    <h5>Unit 10N - Living Room</h5>
+                    <p>Modern luxury with panoramic views</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/building/exterior.jpg" class="d-block w-100" alt="Building Exterior">
+                <div class="carousel-caption">
+                    <h5>W Hollywood Residences</h5>
+                    <p>Luxury living in the heart of Hollywood</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Featured Properties</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="unit-card">
+                    <img src="images/8A/unit_8A_image_2.jpg" class="card-img-top" alt="Unit 8A">
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Unit 8A</h5>
+                        <p class="card-text">2 Bed, 2.5 Bath | 1,580 sq ft</p>
+                        <a href="8A.html" class="btn btn-outline-light">View Details</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Building Features -->
-        <section class="mb-5">
-            <h2 class="text-center mb-4">Building Amenities</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="unit-card rounded p-4 text-center">
-                        <i class="fas fa-swimming-pool feature-icon"></i>
-                        <h3 class="h5 mb-3">Rooftop Pool</h3>
-                        <p>Spectacular rooftop pool with panoramic views of Hollywood and downtown LA</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="unit-card rounded p-4 text-center">
-                        <i class="fas fa-dumbbell feature-icon"></i>
-                        <h3 class="h5 mb-3">Fitness Center</h3>
-                        <p>State-of-the-art fitness center with premium equipment and training areas</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="unit-card rounded p-4 text-center">
-                        <i class="fas fa-concierge-bell feature-icon"></i>
-                        <h3 class="h5 mb-3">Concierge Service</h3>
-                        <p>24/7 concierge service and security for residents' convenience and peace of mind</p>
+            <div class="col-md-6 mb-4">
+                <div class="unit-card">
+                    <img src="images/10N/unit_10N_image_2.jpg" class="card-img-top" alt="Unit 10N">
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Unit 10N</h5>
+                        <p class="card-text">2 Bed, 2 Bath | 1,480 sq ft</p>
+                        <a href="10N.html" class="btn btn-outline-light">View Details</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Location Features -->
-        <section class="mb-5">
-            <div class="unit-card rounded p-4 glow">
-                <h2 class="text-center mb-4">Prime Location</h2>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <h3 class="h5 mb-3">Entertainment</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">• Walking distance to Hollywood Walk of Fame</li>
-                            <li class="mb-2">• Close to premier entertainment venues</li>
-                            <li class="mb-2">• Luxury shopping and dining nearby</li>
-                            <li>• Historic Hollywood theaters</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <h3 class="h5 mb-3">Transportation</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">• Direct access to Metro Red Line</li>
-                            <li class="mb-2">• Easy freeway access</li>
-                            <li class="mb-2">• Minutes from Downtown LA</li>
-                            <li>• Valet parking available</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
