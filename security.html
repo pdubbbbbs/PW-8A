@@ -3,183 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Dashboard</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Security Operations Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <style>
-        body {
-            background-color: #FFB6C1; /* Light pink background */
-        }
-        .logo {
-            max-width: 200px;
-            margin: 20px auto;
-            display: block;
-        }
         .dashboard-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.2s;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
         }
         .dashboard-card:hover {
             transform: translateY(-5px);
         }
-        .status-indicator {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 10px;
+        .glow {
+            box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
         }
-        .status-active {
-            background-color: #28a745;
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
         }
-        .status-inactive {
-            background-color: #dc3545;
-        }
-        .status-pending {
-            background-color: #ffc107;
-        }
-        .header-section {
-            background-color: #343a40;
-            color: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-        .device-icon {
+        .metric-value {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            color: #ff69b4;
         }
     </style>
 </head>
-<body>
-    <!-- Logo -->
-    <div class="text-center">
-        <img src="https://imagedelivery.net/d4HNVLSeqklY6cgAsrZqOw/logo/public" alt="Company Logo" class="logo">
-    </div>
-
-    <!-- Header Section -->
-    <div class="header-section">
-        <div class="container">
-            <h1>Security Dashboard</h1>
-            <p>Real-time monitoring and security status</p>
+<body class="min-h-screen">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="logo">
+                <a href="../index.html" class="text-pink-300 font-bold text-xl">W Hollywood Residences</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="../index.html" class="hover:text-pink-300">Home</a></li>
+                <li><a href="../8A.html" class="hover:text-pink-300">Unit 8A</a></li>
+                <li><a href="../10N.html" class="hover:text-pink-300">Unit 10N</a></li>
+                <li><a href="../12B.html" class="hover:text-pink-300">Unit 12B</a></li>
+                <li><a href="../security-dashboard" class="hover:text-pink-300">Security Dashboard</a></li>
+                <li><a href="../security-expertise" class="hover:text-pink-300">Security Portfolio</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Summary Row -->
-        <div class="row mb-4">
-            <div class="col-md-4">
-                <div class="dashboard-card p-4">
-                    <i class="fas fa-video device-icon text-primary"></i>
-                    <h3>Cameras</h3>
-                    <p>8 Active / 0 Inactive</p>
+    <main class="container mx-auto p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Security Operations Center</h1>
+            <p class="text-xl text-pink-300">Real-time Security Monitoring & Analytics</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Threat Level</h3>
+                <div class="metric-value">Low</div>
+                <p class="text-sm text-gray-300">Current Status</p>
+            </div>
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Active Defenses</h3>
+                <div class="metric-value">100%</div>
+                <p class="text-sm text-gray-300">Systems Online</p>
+            </div>
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Monitored Assets</h3>
+                <div class="metric-value">147</div>
+                <p class="text-sm text-gray-300">Protected Systems</p>
+            </div>
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Response Time</h3>
+                <div class="metric-value">&lt;1m</div>
+                <p class="text-sm text-gray-300">Average Response</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-xl font-semibold mb-4">Network Activity</h3>
+                <canvas id="networkChart" height="250"></canvas>
+            </div>
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-xl font-semibold mb-4">Security Events</h3>
+                <canvas id="eventsChart" height="250"></canvas>
+            </div>
+        </div>
+
+        <div class="dashboard-card rounded-lg p-6 glow mb-8">
+            <h3 class="text-xl font-semibold mb-4">Real-time Security Events</h3>
+            <div id="eventLog" class="space-y-4">
+                <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                    <div>
+                        <p class="font-semibold">Firewall Update</p>
+                        <p class="text-sm text-gray-300">System security patch applied</p>
+                    </div>
+                    <span class="text-green-400">Completed</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                    <div>
+                        <p class="font-semibold">Intrusion Detection</p>
+                        <p class="text-sm text-gray-300">Analyzed and blocked suspicious IP</p>
+                    </div>
+                    <span class="text-green-400">Resolved</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="font-semibold">Security Scan</p>
+                        <p class="text-sm text-gray-300">Complete system vulnerability scan</p>
+                    </div>
+                    <span class="text-blue-400">In Progress</span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="dashboard-card p-4">
-                    <i class="fas fa-door-closed device-icon text-success"></i>
-                    <h3>Access Points</h3>
-                    <p>12 Secured / 0 Unsecured</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-xl font-semibold mb-4">Security Score</h3>
+                <canvas id="scoreChart" height="250"></canvas>
+            </div>
+            <div class="dashboard-card rounded-lg p-6 glow">
+                <h3 class="text-xl font-semibold mb-4">System Health</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span>Firewall Protection</span>
+                        <span class="px-2 py-1 bg-green-500 rounded text-xs">Active</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Intrusion Prevention</span>
+                        <span class="px-2 py-1 bg-green-500 rounded text-xs">Active</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Data Encryption</span>
+                        <span class="px-2 py-1 bg-green-500 rounded text-xs">Active</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Access Control</span>
+                        <span class="px-2 py-1 bg-green-500 rounded text-xs">Active</span>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="dashboard-card p-4">
-                    <i class="fas fa-bell device-icon text-warning"></i>
-                    <h3>Alerts</h3>
-                    <p>0 Active Alerts</p>
-                </div>
-            </div>
         </div>
+    </main>
 
-        <!-- Device Status -->
-        <h2 class="mb-4">Device Status</h2>
-        <div class="dashboard-card p-4">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Device</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                            <th>Last Check</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Camera 1</td>
-                            <td>Unit 8A - Front</td>
-                            <td><span class="status-indicator status-active"></span>Active</td>
-                            <td>1 min ago</td>
-                        </tr>
-                        <tr>
-                            <td>Camera 2</td>
-                            <td>Unit 8A - Back</td>
-                            <td><span class="status-indicator status-active"></span>Active</td>
-                            <td>1 min ago</td>
-                        </tr>
-                        <tr>
-                            <td>Door Lock</td>
-                            <td>Unit 8A - Main</td>
-                            <td><span class="status-indicator status-active"></span>Secured</td>
-                            <td>1 min ago</td>
-                        </tr>
-                        <tr>
-                            <td>Camera 3</td>
-                            <td>Unit 10N - Front</td>
-                            <td><span class="status-indicator status-active"></span>Active</td>
-                            <td>1 min ago</td>
-                        </tr>
-                        <tr>
-                            <td>Camera 4</td>
-                            <td>Unit 10N - Back</td>
-                            <td><span class="status-indicator status-active"></span>Active</td>
-                            <td>1 min ago</td>
-                        </tr>
-                        <tr>
-                            <td>Door Lock</td>
-                            <td>Unit 10N - Main</td>
-                            <td><span class="status-indicator status-active"></span>Secured</td>
-                            <td>1 min ago</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Network Activity Chart
+            new Chart(document.getElementById('networkChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 6}, (_, i) => moment().subtract(i, 'hours').format('HH:mm')).reverse(),
+                    datasets: [{
+                        label: 'Network Traffic',
+                        data: [65, 59, 80, 81, 56, 55],
+                        borderColor: '#ff69b4',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        }
+                    }
+                }
+            });
 
-        <!-- Recent Activity -->
-        <h2 class="mb-4 mt-5">Recent Activity</h2>
-        <div class="dashboard-card p-4">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Daily System Check</h5>
-                        <small>3 hours ago</small>
-                    </div>
-                    <p class="mb-1">All systems operating normally</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Maintenance Check</h5>
-                        <small>1 day ago</small>
-                    </div>
-                    <p class="mb-1">Routine maintenance completed on all cameras</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">System Update</h5>
-                        <small>2 days ago</small>
-                    </div>
-                    <p class="mb-1">Security software updated to latest version</p>
-                </a>
-            </div>
-        </div>
-    </div>
+            // Security Events Chart
+            new Chart(document.getElementById('eventsChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Critical', 'High', 'Medium', 'Low'],
+                    datasets: [{
+                        label: 'Security Events',
+                        data: [2, 5, 15, 30],
+                        backgroundColor: [
+                            '#ef4444',
+                            '#f97316',
+                            '#eab308',
+                            '#22c55e'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        }
+                    }
+                }
+            });
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            // Security Score Chart
+            new Chart(document.getElementById('scoreChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Secure', 'Warning', 'Critical'],
+                    datasets: [{
+                        data: [85, 10, 5],
+                        backgroundColor: ['#22c55e', '#eab308', '#ef4444']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
