@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 10N - W Hollywood Residences</title>
+    <meta name="description" content="Experience premium living in Unit 10N at W Hollywood Residences, featuring panoramic north-facing views and designer finishes.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+        .unit-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .unit-card:hover {
+            transform: translateY(-5px);
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
+        }
+        .spec-value {
+            color: #ff69b4;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: white !important;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ff69b4 !important;
+        }
+        .nav-link.active {
+            color: #ff69b4 !important;
+        }
+        .carousel-item img {
+            height: 600px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand text-pink" href="index.html" style="color: #ff69b4;">W Hollywood Residences</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="8A.html">Unit 8A</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="10N.html">Unit 10N</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="security.html">Security Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Image Carousel -->
+    <div id="unitCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#unitCarousel" data-bs-slide-to="4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/10N/placeholder1.jpg" class="d-block" alt="Unit 10N Main View">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to Unit 10N</h5>
+                    <p>Designer Living Space with Panoramic Views</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/10N/placeholder2.jpg" class="d-block" alt="Unit 10N Living Room">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Elegant Living Room</h5>
+                    <p>Open Concept with City Views</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/10N/placeholder3.jpg" class="d-block" alt="Unit 10N Kitchen">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Chef's Kitchen</h5>
+                    <p>Premium Appliances and Custom Design</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/10N/placeholder4.jpg" class="d-block" alt="Unit 10N Master Bedroom">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Master Suite</h5>
+                    <p>Luxurious Bedroom with City Skyline Views</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/10N/placeholder5.jpg" class="d-block" alt="Unit 10N Master Bathroom">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Designer Bathroom</h5>
+                    <p>Spa-Inspired Master Bath</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#unitCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#unitCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <main class="container p-8">
+        <header class="text-center my-5">
+            <h1 class="display-4 mb-4">Unit 10N - Designer Luxury Living</h1>
+            <p class="lead" style="color: #ff69b4;">Experience elevated living with panoramic north-facing views in this designer residence.</p>
+        </header>
+
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="unit-card rounded p-4 glow">
+                    <h3 class="h5 mb-3">Property Details</h3>
+                    <div class="spec-value">Unit 10N</div>
+                    <p class="text-muted">Premium Location</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="unit-card rounded p-4 glow">
+                    <h3 class="h5 mb-3">Square Footage</h3>
+                    <div class="spec-value">1,480 sq ft</div>
+                    <p class="text-muted">Spacious Layout</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="unit-card rounded p-4 glow">
+                    <h3 class="h5 mb-3">Configuration</h3>
+                    <div class="spec-value">2 Bed, 2 Bath</div>
+                    <p class="text-muted">Designer Finishes</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="unit-card rounded p-4 glow mb-4">
+            <h2 class="h3 mb-4">Premium North-Facing Unit</h2>
+            <p class="lead mb-4">Unit 10N showcases the epitome of luxury living at W Hollywood Residences, featuring designer finishes and breathtaking north-facing views of the Hollywood Hills and city skyline.</p>
+            <p class="mb-4">This exclusive residence combines sophisticated design with premium materials, creating an unparalleled living experience. The north-facing orientation provides both spectacular views and optimal natural lighting throughout the day.</p>
+            <p>Located on the prestigious 10th floor, this unit offers an elevated perspective of Hollywood, perfectly balancing privacy with connectivity to the vibrant urban scene below.</p>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="unit-card rounded p-4 glow h-100">
+                    <h3 class="h4 mb-4">Designer Features</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">• European-designed kitchen cabinetry</li>
+                        <li class="mb-2">• Natural stone countertops and backsplashes</li>
+                        <li class="mb-2">• Premium stainless steel appliance package</li>
+                        <li class="mb-2">• Integrated home automation system</li>
+                        <li>• Designer light fixtures throughout</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="unit-card rounded p-4 glow h-100">
+                    <h3 class="h4 mb-4">Building Amenities</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">• Spectacular rooftop pool with panoramic views</li>
+                        <li class="mb-2">• State-of-the-art fitness center</li>
+                        <li class="mb-2">• 24/7 concierge and security</li>
+                        <li class="mb-2">• Valet parking service</li>
+                        <li>• Exclusive resident lounge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
