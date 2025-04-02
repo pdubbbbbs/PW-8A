@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 8A - W Hollywood Residences</title>
+    <meta name="description" content="Explore the premium features of Unit 8A at W Hollywood Residences, featuring a recent high-quality remodel and stunning north-facing views.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+        .unit-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .unit-card:hover {
+            transform: translateY(-5px);
+        }
+        .glow {
+            box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
+        }
+        .spec-value {
+            color: #ff69b4;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="logo">
+                <a href="index.html" class="text-pink-300 font-bold text-xl">W Hollywood Residences</a>
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-pink-300">Home</a></li>
+                <li><a href="8A.html" class="text-pink-300">Unit 8A</a></li>
+                <li><a href="10N.html" class="hover:text-pink-300">Unit 10N</a></li>
+                <li><a href="security.html" class="hover:text-pink-300">Security Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Unit 8A - Premium Luxury Living</h1>
+            <p class="text-xl text-pink-300">Discover the crown jewel of W Hollywood Residences, featuring a recent high-quality remodel and breathtaking north-facing views.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="unit-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Listing Price</h3>
+                <div class="spec-value">$1,875,000</div>
+                <p class="text-sm text-gray-300">Premium Unit</p>
+            </div>
+            <div class="unit-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Square Footage</h3>
+                <div class="spec-value">1,580 sq ft</div>
+                <p class="text-sm text-gray-300">Spacious Layout</p>
+            </div>
+            <div class="unit-card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">Configuration</h3>
+                <div class="spec-value">2 Bed, 2.5 Bath</div>
+                <p class="text-sm text-gray-300">Recently Remodeled</p>
+            </div>
+        </div>
+
+        <div class="unit-card rounded-lg p-6 glow mb-8">
+            <h2 class="text-2xl font-bold mb-4">Premium North-Facing Unit</h2>
+            <p class="text-lg mb-4">Unit 8A represents the pinnacle of luxury living at the W Hollywood Residences, featuring a recent comprehensive remodel and stunning north-facing views that showcase iconic Hollywood landmarks.</p>
+            <p class="mb-4">This meticulously renovated residence offers an exceptional blend of sophisticated design, premium materials, and breathtaking vistas that create an unparalleled living experience. The north-facing orientation provides both spectacular views and optimal natural lighting throughout the day.</p>
+            <p>With its strategic location on the 8th floor, this unit offers the perfect balance of elevation for panoramic views while maintaining a connection to the vibrant energy of Hollywood below.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="unit-card rounded-lg p-6 glow">
+                <h3 class="text-xl font-semibold mb-4">Recent Premium Remodeling</h3>
+                <ul class="space-y-2">
+                    <li>• Custom Italian cabinetry with soft-close features</li>
+                    <li>• Premium quartz countertops with waterfall edge island</li>
+                    <li>• Wolf and Sub-Zero stainless steel appliance package</li>
+                    <li>• Smart home system with voice control</li>
+                    <li>• Custom LED recessed lighting with dimmers</li>
+                </ul>
+            </div>
+            <div class="unit-card rounded-lg p-6 glow">
+                <h3 class="text-xl font-semibold mb-4">Building Amenities</h3>
+                <ul class="space-y-2">
+                    <li>• Spectacular rooftop pool with panoramic views</li>
+                    <li>• State-of-the-art fitness center</li>
+                    <li>• 24/7 concierge and security</li>
+                    <li>• Valet parking service</li>
+                    <li>• Exclusive resident lounge</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="unit-card rounded-lg p-6 glow">
+            <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+            <p class="text-lg mb-4">For more information about Unit 8A or to schedule a private viewing, please contact:</p>
+            <div class="text-pink-300">
+                <p>W Hollywood Residences</p>
+                <p>6250 Hollywood Blvd</p>
+                <p>Los Angeles, CA 90028</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
